@@ -110,7 +110,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-cream-400 text-sm">hello@hunarbyapi.com</span>
+                <span className="text-cream-400 text-sm">agharida17@gmail.com</span>
               </li>
             </ul>
           </motion.div>

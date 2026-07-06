@@ -133,7 +133,7 @@ export default function Contact() {
                 {[
                   { icon: MapPin, title: "Visit Us", content: "Wah Cantt, Pakistan", sub: "Shop by appointment" },
                   { icon: Phone, title: "Call Us", content: "0333-3395487", sub: "Mon-Sat, 10AM - 7PM" },
-                  { icon: Mail, title: "Email Us", content: "hello@hunarbyapi.com", sub: "We reply within 24 hours" },
+                  { icon: Mail, title: "Email Us", content: "agharida17@gmail.com", sub: "We reply within 24 hours" },
                 ].map((item) => {
                   const Icon = item.icon
                   return (

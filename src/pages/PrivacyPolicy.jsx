@@ -39,7 +39,7 @@ const sections = [
   {
     title: "Contact Us",
     content:
-      "If you have any questions about this privacy policy, please contact us at hello@hunarbyapi.com or through our contact page.",
+      "If you have any questions about this privacy policy, please contact us at agharida17@gmail.com or through our contact page.",
   },
 ]
 
