@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, useEffect } from "react"
-import { WHATSAPP_NUMBER, OWNER_EMAIL } from "../data/constants"
+import { WHATSAPP_NUMBER, OWNER_EMAIL, DELIVERY_CHARGE } from "../data/constants"
 
 const CartContext = createContext()
 
@@ -40,11 +40,13 @@ const cartReducer = (state, action) => {
   }
 }
 
-const buildOrderMessage = (customerInfo, items, total) => {
+const buildOrderMessage = (customerInfo, items, subtotal, deliveryCharge) => {
   const orderLines = items.map(
     (item) =>
       `${item.name} x ${item.quantity} - Rs. ${(item.price * item.quantity).toLocaleString()}`
   ).join("\n")
+
+  const grandTotal = subtotal + deliveryCharge
 
   return (
     `New Order - Hunar By Api 🌸\n\n` +
@@ -52,7 +54,10 @@ const buildOrderMessage = (customerInfo, items, total) => {
     `Phone: ${customerInfo.phone}\n` +
     `Address: ${customerInfo.address}\n\n` +
     `Order Details:\n${orderLines}\n\n` +
-    `Total: Rs. ${total.toLocaleString()}\n\n` +
+    `Subtotal: Rs. ${subtotal.toLocaleString()}\n` +
+    `Delivery Charges: Rs. ${deliveryCharge.toLocaleString()}\n` +
+    `Total: Rs. ${grandTotal.toLocaleString()}\n\n` +
+    `Payment: Cash on Delivery\n\n` +
     `Thank you for shopping with Hunar By Api!`
   )
 }
@@ -80,8 +85,8 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "CLEAR_CART" })
   }
 
-  const sendOrderNotifications = (customerInfo, items, total) => {
-    const message = buildOrderMessage(customerInfo, items, total)
+  const sendOrderNotifications = (customerInfo, items, subtotal) => {
+    const message = buildOrderMessage(customerInfo, items, subtotal, DELIVERY_CHARGE)
 
     const waMessage = encodeURIComponent(message)
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`, "_blank")

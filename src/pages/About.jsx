@@ -73,11 +73,11 @@ export default function About() {
                   promise of quality that machines simply cannot replicate.
                 </p>
                 <p>
-                  Today, Hunar By Api reaches women far beyond the borders of Pakistan. With worldwide delivery, Nadia
-                  sends her handcrafted bottoms to every corner of the globe — from Karachi to Canada, from Lahore to
-                  London. Yet no matter how far the packages travel, every stitch still begins the same way: at her
-                  worktable in Wah Cantt, with the same hands, the same heart, and the same dream that started it all
-                  over two decades ago.
+                  Today, Hunar By Api reaches women far beyond the borders of Pakistan. With worldwide delivery from our
+                  home in Wah Cantt, Nadia sends her handcrafted bottoms to every corner of the globe — from Canada to
+                  London, from across Pakistan to far beyond. Yet no matter how far the packages travel, every stitch
+                  still begins the same way: at her worktable in Wah Cantt, with the same hands, the same heart, and
+                  the same dream that started it all over two decades ago.
                 </p>
               </div>
               <Link

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Trash2, Minus, Plus, ShoppingBag, ArrowLeft, Check, Package } from "lucide-react"
 import { useCart } from "../context/CartContext"
-import { WHATSAPP_NUMBER, OWNER_EMAIL } from "../data/constants"
+import { WHATSAPP_NUMBER, OWNER_EMAIL, DELIVERY_CHARGE } from "../data/constants"
 
 export default function Cart() {
   const { cart, removeFromCart, updateQuantity, sendOrderNotifications, cartTotal } = useCart()
@@ -14,6 +14,8 @@ export default function Cart() {
     phone: "",
     address: "",
   })
+
+  const orderTotal = cartTotal + DELIVERY_CHARGE
 
   const handleCheckout = (e) => {
     e.preventDefault()
@@ -42,7 +44,7 @@ export default function Cart() {
             will be contacted shortly for confirmation and delivery.
           </p>
           <div className="bg-maroon-50 rounded-xl border border-maroon-200 p-4 mb-8 text-sm text-left space-y-1">
-            <p><span className="font-medium text-charcoal-800">WhatsApp:</span> +92 333 3955487</p>
+            <p><span className="font-medium text-charcoal-800">WhatsApp:</span> 0333-3395487</p>
             <p><span className="font-medium text-charcoal-800">Email:</span> {OWNER_EMAIL}</p>
           </div>
           <Link
@@ -147,14 +149,26 @@ export default function Cart() {
           </AnimatePresence>
         </div>
 
-        <div className="bg-maroon-50 rounded-xl border border-maroon-200 p-6 mb-8">
-          <div className="flex items-center justify-between mb-2">
+        <div className="bg-maroon-50 rounded-xl border border-maroon-200 p-6 mb-8 space-y-3">
+          <div className="flex items-center justify-between">
             <span className="text-charcoal-600">Subtotal</span>
-            <span className="font-display text-xl text-maroon-600 font-semibold">
+            <span className="font-display text-maroon-600 font-semibold">
               Rs. {cartTotal.toLocaleString()}
             </span>
           </div>
-          <p className="text-charcoal-400 text-sm">Free shipping across Pakistan</p>
+          <div className="flex items-center justify-between">
+            <span className="text-charcoal-600">Delivery Charges</span>
+            <span className="font-display text-maroon-600 font-semibold">
+              Rs. {DELIVERY_CHARGE.toLocaleString()}
+            </span>
+          </div>
+          <hr className="border-maroon-200" />
+          <div className="flex items-center justify-between">
+            <span className="text-charcoal-800 font-medium">Total</span>
+            <span className="font-display text-xl text-maroon-600 font-bold">
+              Rs. {orderTotal.toLocaleString()}
+            </span>
+          </div>
         </div>
 
         {!showForm ? (
@@ -207,9 +221,26 @@ export default function Cart() {
               />
             </div>
 
+            <div>
+              <h3 className="font-display text-lg text-charcoal-900 mb-3">Payment Method</h3>
+              <label className="flex items-center gap-3 p-4 bg-maroon-50 border-2 border-maroon-600 rounded-lg cursor-pointer">
+                <input
+                  type="radio"
+                  name="payment"
+                  checked
+                  readOnly
+                  className="accent-maroon-600 w-4 h-4"
+                />
+                <div>
+                  <span className="font-medium text-charcoal-800">Cash on Delivery</span>
+                  <p className="text-charcoal-400 text-sm">Pay when you receive your order</p>
+                </div>
+              </label>
+            </div>
+
             <div className="bg-maroon-50 border border-maroon-200 rounded-lg p-4 text-sm text-charcoal-600">
               <p className="font-medium text-charcoal-800 mb-1">How it works:</p>
-              <p>After placing your order, the details will be sent to the owner via <strong>WhatsApp</strong> and <strong>Email</strong>. The owner will contact you to confirm and arrange delivery.</p>
+              <p>After placing your order, the details will be sent to the owner via <strong>WhatsApp</strong> and <strong>Email</strong>. The owner will contact you to confirm and arrange delivery. Payment will be collected upon delivery.</p>
             </div>
 
             <div className="flex gap-3">

@@ -102,11 +102,11 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-cream-400 text-sm">Karachi, Pakistan</span>
+                <span className="text-cream-400 text-sm">Wah Cantt, Pakistan</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={18} className="text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-cream-400 text-sm">+92 333 3955487</span>
+                <span className="text-cream-400 text-sm">0333-3395487</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={18} className="text-amber-400 mt-0.5 shrink-0" />

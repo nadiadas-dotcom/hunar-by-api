@@ -62,13 +62,32 @@ export const products = [
     rating: 4.6,
     reviewCount: 78,
   },
+  {
+    id: 4,
+    name: "Handembroidered Trouser",
+    price: 1400,
+    originalPrice: null,
+    category: "bottom-wear",
+    categoryName: "Bottom Wear",
+    fabric: "Lawn",
+    description: "Belted, adjustable trouser with hand embroidery detailing.",
+    details: ["Hand embroidered detailing", "Belted adjustable waist", "Premium quality fabric", "Comfortable fit"],
+    images: [
+      "/images/handembroidered-trouser.jpeg",
+      "/images/handembroidered-trouser-1.jpeg",
+    ],
+    isNew: true,
+    isBestSeller: false,
+    rating: 4.5,
+    reviewCount: 10,
+  },
 ]
 
 export const reviews = [
   {
     id: 1,
     name: "Ayesha Khan",
-    location: "Karachi",
+    location: "Wah Cantt",
     rating: 5,
     text: "Absolutely in love with my Shahi Chikankari Shalwar! The embroidery is exquisite and the fabric feels divine.",
     product: "Shahi Chikankari Shalwar",
