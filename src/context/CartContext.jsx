@@ -85,8 +85,18 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "CLEAR_CART" })
   }
 
+  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
+  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+
+  const FREE_DELIVERY_THRESHOLD = 3
+  const isFreeDelivery = cartCount >= FREE_DELIVERY_THRESHOLD
+  const deliveryCharge = isFreeDelivery ? 0 : DELIVERY_CHARGE
+  const orderTotal = cartTotal + deliveryCharge
+  const itemsUntilFreeDelivery = Math.max(0, FREE_DELIVERY_THRESHOLD - cartCount)
+
   const sendOrderNotifications = (customerInfo, items, subtotal) => {
-    const message = buildOrderMessage(customerInfo, items, subtotal, DELIVERY_CHARGE)
+    const dc = deliveryCharge
+    const message = buildOrderMessage(customerInfo, items, subtotal, dc)
 
     const waMessage = encodeURIComponent(message)
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`, "_blank")
@@ -97,9 +107,6 @@ export const CartProvider = ({ children }) => {
 
     dispatch({ type: "CLEAR_CART" })
   }
-
-  const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0)
-  const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   return (
     <CartContext.Provider
@@ -112,6 +119,10 @@ export const CartProvider = ({ children }) => {
         sendOrderNotifications,
         cartCount,
         cartTotal,
+        deliveryCharge,
+        orderTotal,
+        isFreeDelivery,
+        itemsUntilFreeDelivery,
       }}
     >
       {children}

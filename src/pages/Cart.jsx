@@ -1,12 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
-import { Trash2, Minus, Plus, ShoppingBag, ArrowLeft, Check, Package } from "lucide-react"
+import { Trash2, Minus, Plus, ShoppingBag, ArrowLeft, Package, Truck } from "lucide-react"
 import { useCart } from "../context/CartContext"
 import { WHATSAPP_NUMBER, OWNER_EMAIL, DELIVERY_CHARGE } from "../data/constants"
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, sendOrderNotifications, cartTotal } = useCart()
+  const { cart, removeFromCart, updateQuantity, sendOrderNotifications, cartTotal, deliveryCharge, orderTotal, isFreeDelivery, itemsUntilFreeDelivery } = useCart()
   const [showForm, setShowForm] = useState(false)
   const [orderPlaced, setOrderPlaced] = useState(false)
   const [customerInfo, setCustomerInfo] = useState({
@@ -14,8 +14,6 @@ export default function Cart() {
     phone: "",
     address: "",
   })
-
-  const orderTotal = cartTotal + DELIVERY_CHARGE
 
   const handleCheckout = (e) => {
     e.preventDefault()
@@ -150,6 +148,17 @@ export default function Cart() {
         </div>
 
         <div className="bg-maroon-50 rounded-xl border border-maroon-200 p-6 mb-8 space-y-3">
+          {isFreeDelivery ? (
+            <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-300 rounded-lg px-4 py-2.5 text-emerald-800 text-sm font-medium">
+              <Truck size={18} className="text-emerald-600 shrink-0" />
+              Free delivery unlocked!
+            </div>
+          ) : itemsUntilFreeDelivery > 0 && itemsUntilFreeDelivery <= 2 ? (
+            <div className="flex items-center gap-2 bg-amber-50 border border-amber-300 rounded-lg px-4 py-2.5 text-amber-800 text-sm font-medium">
+              <Truck size={18} className="text-amber-600 shrink-0" />
+              Add {itemsUntilFreeDelivery} more {itemsUntilFreeDelivery === 1 ? "item" : "items"} for free delivery
+            </div>
+          ) : null}
           <div className="flex items-center justify-between">
             <span className="text-charcoal-600">Subtotal</span>
             <span className="font-display text-maroon-600 font-semibold">
@@ -159,7 +168,11 @@ export default function Cart() {
           <div className="flex items-center justify-between">
             <span className="text-charcoal-600">Delivery Charges</span>
             <span className="font-display text-maroon-600 font-semibold">
-              Rs. {DELIVERY_CHARGE.toLocaleString()}
+              {isFreeDelivery ? (
+                <span className="text-emerald-600">FREE</span>
+              ) : (
+                <>Rs. {deliveryCharge.toLocaleString()}</>
+              )}
             </span>
           </div>
           <hr className="border-maroon-200" />

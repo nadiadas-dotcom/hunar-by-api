@@ -26,7 +26,7 @@ export const products = [
   {
     id: 2,
     name: "Rahima Farshi Shalwar",
-    price: 2300,
+    price: 2000,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -44,7 +44,7 @@ export const products = [
   },
   {
     id: 3,
-    name: "Black Swan Trouser",
+    name: "Black Swan Shalwar",
     price: 1350,
     originalPrice: null,
     category: "bottom-wear",
