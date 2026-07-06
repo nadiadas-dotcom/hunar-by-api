@@ -1,0 +1,101 @@
+export const categories = [
+  { id: "bottom-wear", name: "Bottom Wear", image: "/images/shahi-chikankari.jpeg" },
+]
+
+export const products = [
+  {
+    id: 1,
+    name: "Shahi Chikankari Shalwar",
+    price: 1800,
+    originalPrice: null,
+    category: "bottom-wear",
+    categoryName: "Bottom Wear",
+    fabric: "Lawn Chikankari",
+    description: "Handcrafted with precision, this shalwar features intricate chikankari embroidery on premium lawn fabric. The delicate threadwork adds a touch of heritage elegance to your wardrobe.",
+    details: ["Hand embroidered chikankari work", "Premium quality lawn fabric", "Comfortable elasticated waist", "Lightweight and breathable"],
+    images: [
+      "/images/shahi-chikankari.jpeg",
+      "/images/shahi-chikankari-1.jpeg",
+      "/images/shahi-chikankari-2.jpeg",
+    ],
+    isNew: true,
+    isBestSeller: true,
+    rating: 4.8,
+    reviewCount: 124,
+  },
+  {
+    id: 2,
+    name: "Rahima Farshi Shalwar",
+    price: 2300,
+    originalPrice: null,
+    category: "bottom-wear",
+    categoryName: "Bottom Wear",
+    fabric: "Premium Lawn",
+    description: "Elegant Rahima Farshi shalwar crafted from premium fabric. The flowy silhouette and fine finishing make it a versatile addition to your ethnic wardrobe.",
+    details: ["Premium quality fabric", "Flowy Farshi style", "Comfortable fit", "Fine finish detailing"],
+    images: [
+      "/images/rahima-farshi.jpeg",
+      "/images/rahima-farshi-1.jpeg",
+    ],
+    isNew: true,
+    isBestSeller: true,
+    rating: 4.7,
+    reviewCount: 89,
+  },
+  {
+    id: 3,
+    name: "Black Swan Trouser",
+    price: 1350,
+    originalPrice: null,
+    category: "bottom-wear",
+    categoryName: "Bottom Wear",
+    fabric: "Lawn",
+    description: "Sleek and sophisticated, these black trousers feature elegant finishing for a refined look. Perfect for both casual and formal occasions.",
+    details: ["Premium lawn fabric", "Sleek silhouette", "Comfortable elasticated waist", "Machine washable"],
+    images: [
+      "/images/black-swan-trouser.jpeg",
+      "/images/black-swan-trouser-1.jpeg",
+      "/images/black-swan-trouser-2.jpeg",
+    ],
+    isNew: false,
+    isBestSeller: false,
+    rating: 4.6,
+    reviewCount: 78,
+  },
+]
+
+export const reviews = [
+  {
+    id: 1,
+    name: "Ayesha Khan",
+    location: "Karachi",
+    rating: 5,
+    text: "Absolutely in love with my Shahi Chikankari Shalwar! The embroidery is exquisite and the fabric feels divine.",
+    product: "Shahi Chikankari Shalwar",
+  },
+  {
+    id: 2,
+    name: "Fatima Ahmed",
+    location: "Lahore",
+    rating: 5,
+    text: "The Rahima Farshi shalwar is stunning! Perfect fit and the fabric is so comfortable.",
+    product: "Rahima Farshi Shalwar",
+  },
+  {
+    id: 3,
+    name: "Zara Malik",
+    location: "Islamabad",
+    rating: 4,
+    text: "Black Swan Trouser is very elegant. Got so many compliments!",
+    product: "Black Swan Trouser",
+  },
+]
+
+export const instagramPosts = [
+  { id: 1, image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&q=80", alt: "Shahi Chikankari" },
+  { id: 2, image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300&q=80", alt: "Rahima Farshi" },
+  { id: 3, image: "https://images.unsplash.com/photo-1583494939058-8c56b1e1e8e8?w=300&q=80", alt: "Black Swan" },
+  { id: 4, image: "https://images.unsplash.com/photo-1602293589930-45aad59ba7ab?w=300&q=80", alt: "Chikankari collection" },
+  { id: 5, image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300&q=80", alt: "Kurta collection" },
+  { id: 6, image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=300&q=80", alt: "Festive wear" },
+]
