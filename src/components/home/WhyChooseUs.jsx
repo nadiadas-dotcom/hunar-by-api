@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Shield, Truck, RotateCcw, Sparkles } from "lucide-react"
+import { Shield, Truck, Sparkles } from "lucide-react"
 
 const reasons = [
   {
@@ -10,12 +10,7 @@ const reasons = [
   {
     icon: Truck,
     title: "Free Shipping",
-    description: "Enjoy complimentary shipping on all orders across Pakistan.",
-  },
-  {
-    icon: RotateCcw,
-    title: "Easy Returns",
-    description: "Hassle-free returns within 7 days of delivery. Your satisfaction matters.",
+    description: "Free delivery on purchase of 3 or more bottoms.",
   },
   {
     icon: Shield,
@@ -48,7 +43,7 @@ export default function WhyChooseUs() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => {
             const Icon = reason.icon
             return (

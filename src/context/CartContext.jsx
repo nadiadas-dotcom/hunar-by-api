@@ -55,7 +55,7 @@ const buildOrderMessage = (customerInfo, items, subtotal, deliveryCharge) => {
     `Address: ${customerInfo.address}\n\n` +
     `Order Details:\n${orderLines}\n\n` +
     `Subtotal: Rs. ${subtotal.toLocaleString()}\n` +
-    `Delivery Charges: Rs. ${deliveryCharge.toLocaleString()}\n` +
+    `Delivery Charges: ${deliveryCharge === 0 ? "Free Delivery" : `Rs. ${deliveryCharge.toLocaleString()}`}\n` +
     `Total: Rs. ${grandTotal.toLocaleString()}\n\n` +
     `Payment: Cash on Delivery\n\n` +
     `Thank you for shopping with Hunar By Api!`
