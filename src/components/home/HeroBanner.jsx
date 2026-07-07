@@ -5,13 +5,13 @@ import { Link } from "react-router-dom"
 export default function HeroBanner() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-maroon-50 via-white to-maroon-50">
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-maroon-300 rounded-full" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 border border-maroon-200 rounded-full" />
         <div className="absolute top-1/3 right-1/3 w-48 h-48 border border-maroon-300 rounded-full" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
