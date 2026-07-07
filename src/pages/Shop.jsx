@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import { motion } from "framer-motion"
 import { SlidersHorizontal, X } from "lucide-react"
@@ -14,6 +14,11 @@ export default function Shop() {
   const [sortBy, setSortBy] = useState("default")
   const [priceRange, setPriceRange] = useState({ min: 0, max: Infinity })
   const [filterOpen, setFilterOpen] = useState(false)
+
+  useEffect(() => {
+    setSearchQuery(searchParams.get("search") || "")
+    setSelectedCategory(searchParams.get("category") || "")
+  }, [searchParams])
 
   const filteredProducts = useMemo(() => {
     let result = [...products]
@@ -96,7 +101,7 @@ export default function Shop() {
                 {searchQuery && (
                   <div className="flex items-center gap-2 bg-cream-200 px-3 py-2 rounded-lg text-sm">
                     <span>Search: &ldquo;{searchQuery}&rdquo;</span>
-                    <button onClick={() => { setSearchQuery(""); setSearchParams({}) }}>
+                    <button onClick={() => { setSearchQuery(""); setSearchParams((prev) => { const next = new URLSearchParams(prev); next.delete("search"); return next }) }}>
                       <X size={16} />
                     </button>
                   </div>

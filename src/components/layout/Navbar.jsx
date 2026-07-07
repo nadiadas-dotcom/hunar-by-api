@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Search, ShoppingBag, User, Menu, X } from "lucide-react"
 import { useCart } from "../../context/CartContext"
@@ -32,10 +32,14 @@ export default function Navbar() {
     setSearchOpen(false)
   }, [location])
 
+  const navigate = useNavigate()
+
   const handleSearch = (e) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      window.location.href = `/shop?search=${encodeURIComponent(searchQuery)}`
+      navigate(`/shop?search=${encodeURIComponent(searchQuery)}`)
+      setSearchQuery("")
+      setSearchOpen(false)
     }
   }
 
