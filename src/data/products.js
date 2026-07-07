@@ -6,7 +6,7 @@ export const products = [
   {
     id: 1,
     name: "Shahi Chikankari Shalwar",
-    price: 1300,
+    price: 1350,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -26,7 +26,7 @@ export const products = [
   {
     id: 2,
     name: "Rahima Farshi Shalwar",
-    price: 2000,
+    price: 1850,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -45,7 +45,7 @@ export const products = [
   {
     id: 3,
     name: "Black Swan Shalwar",
-    price: 1200,
+    price: 1350,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -84,7 +84,7 @@ export const products = [
   {
     id: 5,
     name: "Parrot Shalwar",
-    price: 1200,
+    price: 1350,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -104,7 +104,7 @@ export const products = [
   {
     id: 6,
     name: "Elegant White Shalwar",
-    price: 1300,
+    price: 1350,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -125,7 +125,7 @@ export const products = [
   {
     id: 7,
     name: "Amal Cream Trouser",
-    price: 1350,
+    price: 1250,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
@@ -143,7 +143,7 @@ export const products = [
   {
     id: 8,
     name: "Plain Trouser",
-    price: 1000,
+    price: 1100,
     originalPrice: null,
     category: "bottom-wear",
     categoryName: "Bottom Wear",
